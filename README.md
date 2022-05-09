@@ -26,7 +26,7 @@
 
 This project is created to learn and practice livewire; understand why it is created; and explore the power of LIVEWIRE!
 
-This project consist of Livewire table with sorting, search, perPage, and bulk delete functionalities.
+This project consists of Livewire table with sorting, search, perPage, and bulk delete functionalities.
 It is also integrated with Spatie Laravel permissions and Nprogress.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
