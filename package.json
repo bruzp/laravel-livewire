@@ -21,6 +21,7 @@
         "tailwindcss": "^3.0.24"
     },
     "dependencies": {
-        "nprogress": "^0.2.0"
+        "nprogress": "^0.2.0",
+        "turbolinks": "^5.2.0"
     }
 }
