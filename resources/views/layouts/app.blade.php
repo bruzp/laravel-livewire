@@ -14,16 +14,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" data-turbolinks-track="reload">
-
     @livewireStyles
 
     @wireUiScripts
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer data-turbolinks-track="reload"></script>
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-sans antialiased">
