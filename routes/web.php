@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [IndexController::class, 'index']);
 
 Route::group([
     'prefix' => 'dashboard',
