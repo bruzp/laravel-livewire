@@ -1,16 +1,5 @@
 <div id="top"></div>
 
-<!-- NOTICE -->
-## Notice
-<p>
-    <i>
-        Please disable debugbar when testing. <br> 
-        Add this to your .env DEBUGBAR_ENABLED=false. <br> 
-        I am not sure why but debugbar creates tons of xhr requests which slows the page loads.
-    </i>
-</p>
-<br>
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
