@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Post;
+namespace App\Http\Livewire\Dashboard\Post;
 
 use Livewire\Component;
 use WireUi\Traits\Actions;
@@ -16,7 +16,7 @@ class EditLivewire extends Component
 
     public function render()
     {
-        return view('livewire.post.edit-livewire');
+        return view('livewire.dashboard.post.edit-livewire');
     }
 
     public function update()

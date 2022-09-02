@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Post;
+namespace App\Http\Livewire\Dashboard\Post;
 
 use Livewire\Component;
 use App\Models\Post;
@@ -26,7 +26,7 @@ class TableLivewire extends Component
     // called eachtime an event happens
     public function render()
     {
-        return view('livewire.post.table-livewire',  [
+        return view('livewire.dashboard.post.table-livewire',  [
             'posts' => $this->posts,
         ]);
     }

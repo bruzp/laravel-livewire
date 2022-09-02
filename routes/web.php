@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\Front\IndexController;
-use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\IndexController;
+use App\Http\Controllers\Dashboard\PostController;
 
 /*
 |--------------------------------------------------------------------------

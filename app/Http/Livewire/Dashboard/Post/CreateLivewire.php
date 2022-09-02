@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Post;
+namespace App\Http\Livewire\Dashboard\Post;
 
 use Auth;
 use Livewire\Component;
@@ -15,7 +15,7 @@ class CreateLivewire extends Component
 
     public function render()
     {
-        return view('livewire.post.create-livewire');
+        return view('livewire.dashboard.post.create-livewire');
     }
 
     public function store()
