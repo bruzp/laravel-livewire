@@ -49,7 +49,7 @@ Follow these steps to try this out on your localhost.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/bruzp/Livewire-Practice.git
+   git clone https://github.com/bruzp/laravel-livewire.git
    ```
 2. Run composer install
    ```sh
