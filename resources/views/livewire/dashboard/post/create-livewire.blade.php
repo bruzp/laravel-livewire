@@ -10,8 +10,16 @@
                         <x-input wire:model.defer="title" label="Title" placeholder="title" />
                     </div>
 
+                    <div class="mb-3">
+                        <x-input wire:model.lazy="slug" label="Slug" placeholder="slug" />
+                    </div>
+
                     <div class="mb-5">
                         <x-textarea wire:model.defer="description" label="Description" placeholder="description" />
+                    </div>
+
+                    <div class="mb-5">
+                        <x-checkbox id="is-active" label="Active" wire:model.defer="is_active" value="1" />
                     </div>
 
                     <x-button type="submit" primary label="Save" />

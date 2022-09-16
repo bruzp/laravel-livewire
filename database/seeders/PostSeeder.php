@@ -26,7 +26,9 @@ class PostSeeder extends Seeder
             $data[] = [
                 'title' => Str::random(10),
                 'description' => Str::random(50),
+                'slug' => Str::slug(Str::random(rand(10, 50))),
                 'user_id' => $users->random(),
+                'is_active' => 1,
                 'created_at' => now()->toDateTimeString(),
                 'updated_at' => now()->toDateTimeString(),
             ];

@@ -19,8 +19,10 @@ class PostListLivewire extends Component
     {
         return view('livewire.front.post-list-livewire', [
             'posts' => Post::query()
+                ->where('is_active', Post::STATUS['active'])
                 ->offset($this->offset)
                 ->limit($this->limit)
+                ->orderByDesc('updated_at')
                 ->get()
         ]);
     }

@@ -154,4 +154,14 @@ class TableLivewire extends Component
         // https://laravel-livewire.com/docs/2.x/pagination#resetting-pagination
         $this->resetPage();
     }
+
+    public function updatePostStatus($id, $status)
+    {
+        $post = Post::find($id);
+
+        if ($post) {
+            $post->is_active = $status ? Post::STATUS['active'] : Post::STATUS['in-active'];
+            $post->save();
+        }
+    }
 }

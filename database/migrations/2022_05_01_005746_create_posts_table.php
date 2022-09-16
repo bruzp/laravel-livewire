@@ -18,6 +18,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('title');
             $table->text('description');
+            $table->string('slug')->unique();
+            $table->string('featured_image')->nullable();
+            $table->tinyInteger('is_active')->default(0);
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at', $precision = 0);
         });

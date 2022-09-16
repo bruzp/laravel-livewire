@@ -15,8 +15,8 @@
                         </div>
 
                         <div class="mb-3 ml-2">
-                            <x-native-select class="mt-1" label="" placeholder="Actions" :options="['Delete']"
-                                wire:model="action" wire:change="$emit('executeAction')" />
+                            <x-native-select label="" placeholder="Actions" :options="['Delete']" wire:model="action"
+                                wire:change="$emit('executeAction')" />
                         </div>
                     </div>
 
@@ -42,116 +42,143 @@
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                                     <button wire:click="sortBy('id')" type="button">#
                                         @if ($sortBy === 'id')
-                                            @if ($orderBy === 'ASC')
-                                                <i class="fas fa-arrow-up"></i>
-                                            @else
-                                                <i class="fas fa-arrow-down"></i>
-                                            @endif
+                                        @if ($orderBy === 'ASC')
+                                        <i class="fas fa-arrow-up"></i>
+                                        @else
+                                        <i class="fas fa-arrow-down"></i>
+                                        @endif
                                         @endif
                                     </button>
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                                     <button wire:click="sortBy('username')" type="button">{{ __('Posted by') }}
                                         @if ($sortBy === 'username')
-                                            @if ($orderBy === 'ASC')
-                                                <i class="fas fa-arrow-up"></i>
-                                            @else
-                                                <i class="fas fa-arrow-down"></i>
-                                            @endif
+                                        @if ($orderBy === 'ASC')
+                                        <i class="fas fa-arrow-up"></i>
+                                        @else
+                                        <i class="fas fa-arrow-down"></i>
+                                        @endif
                                         @endif
                                     </button>
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                                     <button wire:click="sortBy('title')" type="button">{{ __('Title') }}
                                         @if ($sortBy === 'title')
-                                            @if ($orderBy === 'ASC')
-                                                <i class="fas fa-arrow-up"></i>
-                                            @else
-                                                <i class="fas fa-arrow-down"></i>
-                                            @endif
+                                        @if ($orderBy === 'ASC')
+                                        <i class="fas fa-arrow-up"></i>
+                                        @else
+                                        <i class="fas fa-arrow-down"></i>
+                                        @endif
+                                        @endif
+                                    </button>
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    <button wire:click="sortBy('slug')" type="button">{{ __('Slug') }}
+                                        @if ($sortBy === 'slug')
+                                        @if ($orderBy === 'ASC')
+                                        <i class="fas fa-arrow-up"></i>
+                                        @else
+                                        <i class="fas fa-arrow-down"></i>
+                                        @endif
                                         @endif
                                     </button>
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                                     <button wire:click="sortBy('description')" type="button">{{ __('Description') }}
                                         @if ($sortBy === 'description')
-                                            @if ($orderBy === 'ASC')
-                                                <i class="fas fa-arrow-up"></i>
-                                            @else
-                                                <i class="fas fa-arrow-down"></i>
-                                            @endif
+                                        @if ($orderBy === 'ASC')
+                                        <i class="fas fa-arrow-up"></i>
+                                        @else
+                                        <i class="fas fa-arrow-down"></i>
+                                        @endif
                                         @endif
                                     </button>
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    <button wire:click="sortBy('is_active')" type="button">{{ __('Status') }}
+                                        @if ($sortBy === 'is_active')
+                                        @if ($orderBy === 'ASC')
+                                        <i class="fas fa-arrow-up"></i>
+                                        @else
+                                        <i class="fas fa-arrow-down"></i>
+                                        @endif
+                                        @endif
+                                    </button>
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4"></th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                                     <button wire:click="sortBy('created_at')" type="button">{{ __('Created At') }}
                                         @if ($sortBy === 'created_at')
-                                            @if ($orderBy === 'ASC')
-                                                <i class="fas fa-arrow-up"></i>
-                                            @else
-                                                <i class="fas fa-arrow-down"></i>
-                                            @endif
+                                        @if ($orderBy === 'ASC')
+                                        <i class="fas fa-arrow-up"></i>
+                                        @else
+                                        <i class="fas fa-arrow-down"></i>
+                                        @endif
                                         @endif
                                     </button>
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                                     <button wire:click="sortBy('updated_at')" type="button">{{ __('Updated At') }}
                                         @if ($sortBy === 'updated_at')
-                                            @if ($orderBy === 'ASC')
-                                                <i class="fas fa-arrow-up"></i>
-                                            @else
-                                                <i class="fas fa-arrow-down"></i>
-                                            @endif
+                                        @if ($orderBy === 'ASC')
+                                        <i class="fas fa-arrow-up"></i>
+                                        @else
+                                        <i class="fas fa-arrow-down"></i>
+                                        @endif
                                         @endif
                                     </button>
                                 </th>
-                                <th scope="col" class="text-sm font-medium text-white px-6 py-4"></th>
                             </tr>
                         </thead class="border-b">
                         <tbody>
                             @forelse ($posts as $post)
-                                <tr class="bg-white border-b">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        <div class="flex items-center">
-                                            <input type="checkbox" wire:model="checked" value="{{ $post->id }}"
-                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        </div>
-                                    </td>
-                                    <td
-                                        class="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        {{ $post->id }}
-                                    </td>
-                                    <td
-                                        class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ $post->username }}
-                                    </td>
-                                    <td
-                                        class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ $post->title }}
-                                    </td>
-                                    <td
-                                        class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ Str::limit($post->description, 10) }}
-                                    </td>
-                                    <td
-                                        class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ $post->created_at }}
-                                    </td>
-                                    <td
-                                        class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ $post->updated_at }}
-                                    </td>
-                                    <td
-                                        class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        <x-button href="{{ route('posts.edit', $post->id) }}" warning label="Edit" />
-                                        <x-button negative label="Delete"
-                                            wire:click="confirmDestroy({{ $post->id }})" />
-                                    </td>
-                                </tr class="bg-white border-b">
+                            <tr class="bg-white border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <div class="flex items-center">
+                                        <input type="checkbox" wire:model="checked" value="{{ $post->id }}"
+                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    </div>
+                                </td>
+                                <td class="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    {{ $post->id }}
+                                </td>
+                                <td class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{ $post->username }}
+                                </td>
+                                <td class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{ $post->title }}
+                                </td>
+                                <td class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{ Str::limit($post->slug, 10) }}
+                                </td>
+                                <td class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{ Str::limit($post->description, 10) }}
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <div class="flex items-center">
+                                        <input type="checkbox"
+                                            wire:change="updatePostStatus({{ $post->id }}, $event.target.checked)"
+                                            value="1" {{ $post->is_active ? 'checked="checked"' : '' }}
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded
+                                        focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800
+                                        focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    </div>
+                                </td>
+                                <td class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <x-button href="{{ route('posts.edit', $post->id) }}" warning label="Edit" />
+                                    <x-button negative label="Delete" wire:click="confirmDestroy({{ $post->id }})" />
+                                </td>
+                                <td class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{ $post->created_at }}
+                                </td>
+                                <td class="text-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{ $post->updated_at }}
+                                </td>
+                            </tr class="bg-white border-b">
                             @empty
-                                <tr class="text-center">
-                                    <td colspan="8" class="p-5"><span>No Posts Found</span></td>
-                                </tr>
+                            <tr class="text-center">
+                                <td colspan="8" class="p-5"><span>No Posts Found</span></td>
+                            </tr>
                             @endforelse
                         </tbody>
                     </table>

@@ -9,9 +9,16 @@ class Post extends Model
 {
     use HasFactory;
 
+    public const STATUS = [
+        'active' => 1,
+        'in-active' => 0,
+    ];
+
     protected $fillable = [
         'title',
         'description',
+        'slug',
+        'is_active',
     ];
 
     public function user()
