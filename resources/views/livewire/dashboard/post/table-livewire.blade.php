@@ -177,7 +177,7 @@
                             </tr class="bg-white border-b">
                             @empty
                             <tr class="text-center">
-                                <td colspan="8" class="p-5"><span>No Posts Found</span></td>
+                                <td colspan="10" class="p-5"><span>No Posts Found</span></td>
                             </tr>
                             @endforelse
                         </tbody>
