@@ -2,11 +2,11 @@
 
 namespace App\Http\Livewire\Dashboard\Post;
 
-use Livewire\Component;
-use App\Models\Post;
 use Auth;
-use Livewire\WithPagination;
+use App\Models\Post;
+use Livewire\Component;
 use WireUi\Traits\Actions;
+use Livewire\WithPagination;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class TableLivewire extends Component
