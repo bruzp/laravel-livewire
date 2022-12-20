@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Dashboard\Admin\Livewire;
+namespace Tests\Feature\Dashboard\User\Livewire;
 
 use Tests\TestCase;
 use App\Models\Post;
@@ -14,10 +14,10 @@ class PostUpdateTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_admin_can_update_post()
+    public function test_user_can_update_post()
     {
         $user = User::factory()->create();
-        $user->assignRole('admin');
+        $user->assignRole('user');
 
         $post = $user->posts()->create([
             'title' => 'test',
