@@ -5,11 +5,12 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\Post;
 use App\Models\User;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class PostUserTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function test_user_post_index_page_is_displayed()
     {
         $user = User::factory()->create();
