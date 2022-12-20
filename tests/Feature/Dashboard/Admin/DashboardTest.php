@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Dashboard\Admin;
 
 use Tests\TestCase;
 use App\Models\User;
@@ -14,18 +14,6 @@ class DashboardTest extends TestCase
     {
         $user = User::factory()->create();
         $user->assignRole('admin');
-
-        $response = $this
-            ->actingAs($user)
-            ->get(route('dashboard'));
-
-        $response->assertOk();
-    }
-
-    public function test_user_dashboard_page_is_displayed()
-    {
-        $user = User::factory()->create();
-        $user->assignRole('user');
 
         $response = $this
             ->actingAs($user)
